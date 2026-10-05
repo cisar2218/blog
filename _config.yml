@@ -1,0 +1,93 @@
+# This file is *NOT* reloaded automatically by `jekyll serve`.
+# Restart the server after changing it.
+
+remote_theme: "mmistakes/minimal-mistakes@4.28.1"
+
+# Site settings
+title: MLAB
+masthead_title: Blog
+description: News and stories from MLAB, the open-source modular laboratory.
+url: "https://blog.mlab.cz" # the base hostname & protocol for your site
+baseurl: "" # the subpath of your site, e.g. /blog
+logo: /assets/images/mlab-logo.png
+locale: en-US
+
+# Brand identity, consumed by assets/css/main.scss and _includes/head/custom.html.
+brand:
+  font: 'Roboto, "Helvetica Neue", Arial, sans-serif'
+  font_url: "https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+  primary: "#231f20"
+  link: "#111"
+  masthead_bg: "#fff"
+  masthead_link: "#444"
+  masthead_link_hover: "#000"
+  footer_bg: "#231f20"
+  footer_text: "#fff"
+  radius: "8px"
+  logo_height: "1.7rem" # the MLAB logo is a wide wordmark
+
+# Default author, used for posts without `author:` and for the feed as a whole.
+# Posts select a person with `author: <key from _data/authors.yml>`.
+author:
+  name: "MLAB"
+  bio: "MLAB project team"
+
+footer:
+  links:
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/MLAB-project"
+    - label: "Facebook"
+      icon: "fab fa-fw fa-facebook"
+      url: "https://www.facebook.com/MLAB-203283666377414"
+    - label: "YouTube"
+      icon: "fab fa-fw fa-youtube"
+      url: "https://www.youtube.com/channel/UCCt-R6wkMmc3Aoi0c3IqpjA"
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope"
+      url: "mailto:info@mlab.cz"
+
+permalink: /:year/:month/:day/:title/
+
+# Build settings
+markdown: kramdown
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+# paginate
+paginate: 10
+
+plugins:
+  - jekyll-remote-theme
+  - jekyll-paginate
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-include-cache
+
+category_archive:
+  type: liquid
+  path: /category/
+tag_archive:
+  type: liquid
+  path: /tag/
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      show_date: true
+      read_time: true
+      share: false
+      related: true
+
+exclude:
+  - README.md
+  - LICENSE
+  - Gemfile
+  - Gemfile.lock
+  - vendor/
